@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Card: React.FC<IProduct> = ({ name, price, image }) => {
   return (
-    <div className="p-4 w-full sm:w-72 md:w-80 lg:w-96 m-1 shadow-custom bg-white rounded-lg flex flex-col items-center">
+    <div className="p-4 w-full sm:w-72 md:w-80 lg:w-96 m-2 shadow-custom bg-white rounded-lg flex flex-col items-center">
       <h2 className="font-bold text-lg sm:text-xl text-center">{name}</h2>
 
       <div className="relative w-full h-40 rounded-lg overflow-hidden">
