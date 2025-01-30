@@ -45,7 +45,7 @@ export const RegisterView: React.FC = () => {
 
       if (response && response.status === 201) {
         setTimeout(() => {
-          router.replace('/Login');
+          router.replace('/login');
         }, 2000);
       }
     } catch (error) {
