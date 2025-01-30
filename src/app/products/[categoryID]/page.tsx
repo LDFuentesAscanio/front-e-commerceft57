@@ -11,7 +11,7 @@ export default async function CategoryPage({
   const products = await getProductsByCategoryId(categoryID);
 
   const videoSrc =
-    parseInt(categoryID) % 2 === 0 ? '/Products.mp4' : '/products2.mp4';
+    parseInt(categoryID) % 2 === 0 ? '/Products.mp4' : '/Products2.mp4';
 
   return (
     <div>
