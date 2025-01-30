@@ -2,17 +2,7 @@ import Card from '@/components/Card';
 import { getProductsByCategoryId } from '@/helpers/products.helper';
 import Link from 'next/link';
 
-interface PageProps {
-  params: {
-    categoryID: string;
-  };
-}
-
-const CategoryPage: React.FC<PageProps> = async ({
-  params,
-}: {
-  params: { categoryID: string };
-}) => {
+const CategoryPage = async ({ params }: { params: { categoryID: string } }) => {
   const { categoryID } = params;
   const products = await getProductsByCategoryId(categoryID);
 
