@@ -51,8 +51,13 @@ const CartView: React.FC = () => {
           <p className="text-xl font-semibold">Total: ${total}</p>
           <button
             onClick={handleCheckout}
-            className="mt-4 bg-old-rose text-white font-bold py-2 px-4 rounded hover:bg-black-tag transition"
+            className={`mt-4 font-bold py-2 px-4 rounded transition-colors ${
+              cart.length === 0
+                ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
+                : 'bg-old-rose text-white hover:bg-black-tag'
+            }`}
             aria-label="Proceed to checkout"
+            disabled={cart.length === 0}
           >
             Checkout
           </button>
