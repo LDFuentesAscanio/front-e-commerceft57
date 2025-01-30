@@ -55,9 +55,9 @@ export const RegisterView: React.FC = () => {
 
   return (
     <div className="p-4 min-h-screen bg-pearl-white flex items-center justify-center">
-      <div className="w-full max-w-lg bg-green-tent p-8 rounded-lg shadow-lg">
+      <div className="w-full max-w-md sm:max-w-lg bg-green-tent p-8 rounded-lg shadow-lg">
         <form className="space-y-6" onSubmit={handleSubmit}>
-          <h2 className="text-3xl font-semibold text-gold-elegant text-center">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-gold-elegant text-center">
             Register Form
           </h2>
           <hr className="border-t-2 border-old-rose" />

@@ -13,7 +13,7 @@ const CartView: React.FC = () => {
     const StoredCart = JSON.parse(localStorage.getItem('cart') || '[]');
     if (StoredCart) {
       let totalCart = 0;
-      StoredCart.map((product: IProduct) => {
+      StoredCart.forEach((product: IProduct) => {
         totalCart += product.price;
       });
       setTotal(totalCart);
@@ -22,12 +22,13 @@ const CartView: React.FC = () => {
   }, []);
 
   const handleCheckout = async () => {
-    const idProducts = cart?.map((product) => product.id);
+    const idProducts = cart.map((product) => product.id);
     await createOrder(userData?.token!, idProducts);
     localStorage.setItem('cart', '[]');
     setCart([]);
     setTotal(0);
   };
+
   return (
     <div className="flex flex-col bg-pearl-white p-8 min-h-screen items-center">
       <div className="w-full max-w-3xl bg-green-tent p-6 rounded-lg shadow-lg">
@@ -35,7 +36,7 @@ const CartView: React.FC = () => {
           cart.map((product: IProduct) => (
             <div
               key={product.id}
-              className="mb-4 p-4 border rounded-md bg-white shadow"
+              className="mb-4 p-4 border rounded-md bg-white shadow-lg"
             >
               <p className="text-lg font-bold">{product.name}</p>
               <p className="text-gray-700">Price: ${product.price}</p>
@@ -51,6 +52,7 @@ const CartView: React.FC = () => {
           <button
             onClick={handleCheckout}
             className="mt-4 bg-old-rose text-white font-bold py-2 px-4 rounded hover:bg-black-tag transition"
+            aria-label="Proceed to checkout"
           >
             Checkout
           </button>

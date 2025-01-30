@@ -14,15 +14,17 @@ export default async function CategoryPage({
     parseInt(categoryID) % 2 === 0 ? '/Products.mp4' : '/Products2.mp4';
 
   return (
-    <div>
-      <div className="w-full max-w-xl mx-auto my-8 rounded-lg overflow-hidden">
+    <div className="px-4 sm:px-6 lg:px-8">
+      {/* Video Responsivo */}
+      <div className="w-full max-w-full md:max-w-xl mx-auto my-8 rounded-lg overflow-hidden">
         <video className="w-full h-auto" autoPlay muted loop playsInline>
           <source src={videoSrc} type="video/mp4" />
           Tu navegador no soporta videos HTML5.
         </video>
       </div>
 
-      <div className="max-w-7xl mx-auto space-y-8 mt-4">
+      {/* Grid de productos */}
+      <div className="max-w-7xl mx-auto mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {products &&
           products.map((product) => (
             <Link key={product.id} href={`/product/${product.id}`} passHref>

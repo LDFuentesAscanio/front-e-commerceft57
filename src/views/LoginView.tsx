@@ -10,6 +10,7 @@ import Cookies from 'js-cookie';
 export const LoginView: React.FC = () => {
   const { setUserData } = useAuth();
   const router = useRouter();
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-tr from-teal-dark to-green-dark">
       <div className="bg-green-tent p-8 rounded-xl shadow-md w-full max-w-sm">
@@ -54,13 +55,14 @@ export const LoginView: React.FC = () => {
                 <Field
                   type="email"
                   name="email"
-                  className="p-2 border rounded"
+                  className="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder="Enter your email"
+                  aria-label="Email Address"
                 />
                 <ErrorMessage
                   name="email"
                   component="div"
-                  className="text-red-500 text-sm"
+                  className="text-red-500 text-sm mt-1"
                 />
               </div>
 
@@ -74,27 +76,28 @@ export const LoginView: React.FC = () => {
                 <Field
                   type="password"
                   name="password"
-                  className="p-2 border rounded"
+                  className="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder="Enter your password"
+                  aria-label="Password"
                 />
                 <ErrorMessage
                   name="password"
                   component="div"
-                  className="text-red-500 text-sm"
+                  className="text-red-500 text-sm mt-1"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 mt-4 bg-old-rose text-white font-bold rounded-lg hover:bg-black-tag focus:ring-4 focus:ring-black-tag"
+                className="w-full py-3 mt-4 bg-old-rose text-white font-bold rounded-lg hover:bg-black-tag focus:ring-4 focus:ring-black-tag disabled:bg-gray-300"
               >
                 Submit
               </button>
 
               <Link
                 href="/register"
-                className="text-sm text-center text-black-tag hover:text-gold-elegant"
+                className="text-sm text-center text-black-tag hover:text-gold-elegant mt-4 block"
               >
                 Do not have an account? Register here.
               </Link>

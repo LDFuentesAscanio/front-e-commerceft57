@@ -13,6 +13,7 @@ export const ProductDetailView: React.FC<IProduct> = ({
   categoryId,
 }) => {
   const { userData } = useAuth();
+
   const handleAddToCart = () => {
     if (!userData?.token) {
       Toast.fire({
@@ -49,20 +50,29 @@ export const ProductDetailView: React.FC<IProduct> = ({
       }
     }
   };
+
   return (
     <div className="bg-[url('/assets/fondo.svg')] bg-cover bg-center h-full w-auto p-3">
-      <div className="flex justify-between my-16 bg-pearl-white p-8">
-        <div className="flex w-full h-auto">
-          <img src={image} alt={`${name} - Product Image - ${description}`} />
+      <div className="flex flex-col md:flex-row justify-between my-16 bg-pearl-white p-8 rounded-xl shadow-lg">
+        <div className="flex justify-center md:w-1/2 h-auto mb-6 md:mb-0">
+          <img
+            src={image}
+            alt={`${name} - Product Image - ${description}`}
+            className="max-w-full h-auto rounded-lg"
+          />
         </div>
-        <div className="flex flex-col justify-items-start text-justify p-4 gap-3 h-80 pr-3">
-          <h1 className="text-3xl font-bold text-black-tag">{name}</h1>
-          <p>{description}</p>
-          <p>Stock: {stock}</p>
-          <p className="font-bold text-black-tag">Price: {price}</p>
+
+        <div className="flex flex-col justify-start text-justify p-4 gap-3 md:w-1/2">
+          <h1 className="text-3xl font-bold text-black-tag mb-3">{name}</h1>
+          <p className="text-gray-600 mb-4">{description}</p>
+          <p className="text-sm text-gray-700">Stock: {stock}</p>
+          <p className="font-bold text-black-tag text-xl mt-2">
+            Price: ${price}
+          </p>
+
           <button
             onClick={handleAddToCart}
-            className="bg-old-rose text-white w-52 p-2 rounded-full"
+            className="bg-old-rose text-white w-full sm:w-52 py-2 rounded-full mt-6 hover:bg-old-rose-dark transition duration-300"
           >
             Add to Cart
           </button>

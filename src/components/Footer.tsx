@@ -1,10 +1,10 @@
 const Footer: React.FC = () => {
   return (
-    <div className="text-center">
-      <h2 className="bg-green-tent font-semibold text-black-tag">
+    <footer className="bg-black-tag text-white text-center py-4">
+      <h2 className="text-sm sm:text-base font-medium">
         © Copyright 2025. All Rights Reserved.
       </h2>
-    </div>
+    </footer>
   );
 };
 

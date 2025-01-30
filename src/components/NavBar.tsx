@@ -9,14 +9,18 @@ const NavBar: React.FC = () => {
 
   return (
     <div>
-      <nav className="bg-gradient-to-r from-green-tent to-black-tag text-white p-2 pr-3 flex justify-between items-center">
+      <nav className="bg-gradient-to-r from-green-tent to-black-tag text-white p-2 pr-3 flex flex-col sm:flex-row justify-between items-center sm:space-x-4 space-y-4 sm:space-y-0">
         <Link href="/">
           <div className="flex items-center gap-4 ml-3">
-            <img src="/assets/LogoC.svg" alt="Logo" className="w-10 h-10 p-0" />
+            <img
+              src="/assets/LogoC.svg"
+              alt="Logo"
+              className="w-8 h-8 sm:w-10 sm:h-10 p-0"
+            />
             <h1 className="text-xl font-bold">I-Shop</h1>
           </div>
         </Link>
-        <div>
+        <div className="flex flex-wrap justify-center sm:justify-start sm:space-x-4 space-y-4 sm:space-y-0">
           {categoriesToPreload &&
             categoriesToPreload.map((category) => (
               <Link

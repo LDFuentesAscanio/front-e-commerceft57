@@ -7,25 +7,31 @@ const NavBarSub: React.FC = () => {
 
   return (
     <div>
-      <nav className="bg-gradient-to-r from-old-rose to-pearl-white text-black-tag p-2 pr-3 flex justify-between items-center">
-        <div className="flex gap-4">
+      <nav className="bg-gradient-to-r from-old-rose to-pearl-white text-black-tag p-2 pr-3 flex flex-col sm:flex-row justify-between items-center sm:space-x-6 space-y-4 sm:space-y-0">
+        <div className="flex gap-4 sm:gap-6 flex-wrap justify-center sm:justify-start w-full">
           <Link
             href="/dashboard"
-            className={
-              pathname === '/dashboard'
-                ? 'text-green-tent cursor-default'
-                : 'hover:text-green-tent'
-            }
+            className={`
+              ${
+                pathname === '/dashboard'
+                  ? 'text-green-tent cursor-default'
+                  : 'hover:text-green-tent'
+              }
+              transition-all duration-300 ease-in-out
+            `}
           >
             Dashboard
           </Link>
           <Link
             href="/dashboard/orders"
-            className={
-              pathname === '/dashboard/orders'
-                ? 'text-green-tent cursor-default'
-                : 'hover:text-green-tent'
-            }
+            className={`
+              ${
+                pathname === '/dashboard/orders'
+                  ? 'text-green-tent cursor-default'
+                  : 'hover:text-green-tent'
+              }
+              transition-all duration-300 ease-in-out
+            `}
           >
             Orders
           </Link>

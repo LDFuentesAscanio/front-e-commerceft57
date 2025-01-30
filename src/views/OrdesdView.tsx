@@ -19,27 +19,27 @@ const OrdersView: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center bg-pearl-white p-8 min-h-screen">
-      <div className="w-full max-w-3xl bg-green-tent p-6 rounded-lg shadow-lg">
+      <div className="w-full max-w-4xl bg-green-tent p-6 rounded-xl shadow-lg">
         {orders.length > 0 ? (
           orders.map((order: IOrder) => (
             <div
               key={order.id}
-              className="mb-6 p-4 border rounded-md bg-white shadow"
+              className="mb-6 p-6 border rounded-lg bg-white shadow-md hover:shadow-xl transition-shadow duration-200"
             >
               <h2 className="text-xl font-semibold text-old-rose mb-2">
                 Order Status: {order.status.toLocaleUpperCase()}
               </h2>
-              <p className="text-gray-600">Order N°: {order.id}</p>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-sm mb-2">Order N°: {order.id}</p>
+              <p className="text-gray-600 text-sm mb-4">
                 Date: {new Date(order.date).toLocaleDateString()}
               </p>
-              <div className="mt-4">
+              <div className="space-y-4">
                 {order.products.map((product) => (
                   <div
                     key={product.id}
-                    className="mb-3 p-3 border-b border-gray-200 flex justify-between"
+                    className="flex justify-between items-center border-b py-3"
                   >
-                    <p className="text-lg font-bold">{product.name}</p>
+                    <p className="text-lg font-medium">{product.name}</p>
                     <p className="text-gray-700">${product.price}</p>
                   </div>
                 ))}
