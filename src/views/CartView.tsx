@@ -56,13 +56,6 @@ const CartView: React.FC = () => {
           </button>
         </div>
       </div>
-      <div className="flex align-bottom">
-        <img
-          src="/assets/cart.svg"
-          alt="Logo de la tienda"
-          className="w-40 h-auto p-0"
-        />
-      </div>
     </div>
   );
 };
