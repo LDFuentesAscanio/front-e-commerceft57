@@ -1,13 +1,18 @@
 import { getProductsById } from '@/helpers/products.helper';
 import ProductDetailView from '@/views/ProductDetailView';
 
-const ProductDetail = async ({ params }: { params: { productID: string } }) => {
-  const product = await getProductsById(params.productID);
+export async function ProductDetail({
+  params,
+}: {
+  params: Promise<{ productID: string }>;
+}) {
+  const { productID } = await params;
+  const product = await getProductsById(productID);
   return (
     <div>
       <ProductDetailView {...product} />
     </div>
   );
-};
+}
 
 export default ProductDetail;

@@ -2,8 +2,12 @@ import Card from '@/components/Card';
 import { getProductsByCategoryId } from '@/helpers/products.helper';
 import Link from 'next/link';
 
-const CategoryPage = async ({ params }: { params: { categoryID: string } }) => {
-  const { categoryID } = params;
+export async function CategoryPage({
+  params,
+}: {
+  params: Promise<{ categoryID: string }>;
+}) {
+  const { categoryID } = await params;
   const products = await getProductsByCategoryId(categoryID);
 
   const videoSrc =
@@ -28,6 +32,6 @@ const CategoryPage = async ({ params }: { params: { categoryID: string } }) => {
       </div>
     </div>
   );
-};
+}
 
 export default CategoryPage;
