@@ -12,16 +12,6 @@ export function validateField(values: ILogin) {
 
   if (!values.password) {
     errors.password = 'Password is required';
-  } else if (values.password.length < 8) {
-    errors.password = 'Password must be at least 8 characters long.';
-  } else if (
-    !/[A-Z]/.test(values.password) ||
-    !/[a-z]/.test(values.password) ||
-    !/[0-9]/.test(values.password) ||
-    !/[^A-Za-z0-9]/.test(values.password)
-  ) {
-    errors.password =
-      'Password must include uppercase, lowercase, number, and special character.';
   }
 
   return errors;
