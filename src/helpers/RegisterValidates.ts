@@ -32,15 +32,6 @@ export const RegisterValidate = (
       error = 'Password must contain at least one special character.';
     }
   }
-  if (fieldName === 'repeatPassword') {
-    if (value.trim() === '') {
-      error = 'Repeat password is required.';
-    } else if (value !== form.password) {
-      error = 'Passwords do not match.';
-    }
-  } else if (value.trim() === '') {
-    error = 'Repeat password is required.';
-  }
 
   if (fieldName === 'address') {
     if (value.trim() === '') {
