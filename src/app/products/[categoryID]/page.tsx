@@ -2,7 +2,7 @@ import Card from '@/components/Card';
 import { getProductsByCategoryId } from '@/helpers/products.helper';
 import Link from 'next/link';
 
-export async function CategoryPage({
+export default async function CategoryPage({
   params,
 }: {
   params: Promise<{ categoryID: string }>;
@@ -33,5 +33,3 @@ export async function CategoryPage({
     </div>
   );
 }
-
-export default CategoryPage;

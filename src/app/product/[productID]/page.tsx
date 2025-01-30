@@ -1,7 +1,7 @@
 import { getProductsById } from '@/helpers/products.helper';
 import ProductDetailView from '@/views/ProductDetailView';
 
-export async function ProductDetail({
+export default async function ProductDetail({
   params,
 }: {
   params: Promise<{ productID: string }>;
@@ -14,5 +14,3 @@ export async function ProductDetail({
     </div>
   );
 }
-
-export default ProductDetail;
