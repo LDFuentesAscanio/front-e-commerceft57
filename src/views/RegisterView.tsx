@@ -77,7 +77,7 @@ export const RegisterView: React.FC = () => {
           ))}
           <button
             type="submit"
-            className="w-full bg-old-rose text-teal-dark font-semibold py-2 rounded-md hover:bg-pale-orange transition-colors"
+            className="w-full bg-old-rose text-pearl-white font-semibold py-2 rounded-md hover:bg-black-tag transition-colors"
           >
             Register
           </button>
