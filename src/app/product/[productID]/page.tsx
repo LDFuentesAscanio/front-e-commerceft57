@@ -7,7 +7,11 @@ interface PageProps {
   };
 }
 
-const ProductDetail: React.FC<PageProps> = async ({ params }) => {
+const ProductDetail: React.FC<PageProps> = async ({
+  params,
+}: {
+  params: { productID: string };
+}) => {
   const product = await getProductsById(params.productID);
   return (
     <div>

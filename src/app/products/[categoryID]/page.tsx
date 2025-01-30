@@ -8,7 +8,11 @@ interface PageProps {
   };
 }
 
-const CategoryPage: React.FC<PageProps> = async ({ params }) => {
+const CategoryPage: React.FC<PageProps> = async ({
+  params,
+}: {
+  params: { categoryID: string };
+}) => {
   const { categoryID } = params;
   const products = await getProductsByCategoryId(categoryID);
 
