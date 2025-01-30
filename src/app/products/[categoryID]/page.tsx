@@ -2,10 +2,14 @@ import Card from '@/components/Card';
 import { getProductsByCategoryId } from '@/helpers/products.helper';
 import Link from 'next/link';
 
-const categoryPage: React.FC<{ params: { categoryID: string } }> = async ({
-  params,
-}) => {
-  const { categoryID } = await params;
+interface PageProps {
+  params: {
+    categoryID: string;
+  };
+}
+
+const CategoryPage: React.FC<PageProps> = async ({ params }) => {
+  const { categoryID } = params;
   const products = await getProductsByCategoryId(categoryID);
 
   const videoSrc =
@@ -32,4 +36,4 @@ const categoryPage: React.FC<{ params: { categoryID: string } }> = async ({
   );
 };
 
-export default categoryPage;
+export default CategoryPage;
