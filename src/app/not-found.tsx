@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <section className="relative bg-white dark:bg-black-tag h-screen flex items-center justify-center p-6">
+    <section className="relative bg-white dark:bg-black-tag h-screen flex items-center justify-start p-6">
       <div
         className="absolute inset-0 bg-cover bg-center md:bg-fixed"
         style={{
